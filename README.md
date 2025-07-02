@@ -35,7 +35,7 @@ Dieses Repository als [benutzerdefiniertes Repository](https://hacs.xyz/docs/faq
 ## Einrichtung
 
 1. Füge über die Home Assistant Oberfläche die Integration "Growatt BLE" hinzu.
-2. Gib die Seriennummer (Gerätename, z.B. `QMN000BZPAF410Z9`) deines Geräts ein.
+2. Gib die Seriennummer (Gerätename) deines Geräts ein.
 3. Nach erfolgreicher Erkennung werden die Sensoren automatisch erstellt.
 
 ## Geräte-Namen (Seriennummer) finden
