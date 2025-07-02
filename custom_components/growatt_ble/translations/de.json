@@ -1,0 +1,15 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "data": {
+          "serial": "Seriennummer (Gerätename) eingeben"
+        },
+        "errors": {
+          "invalid_serial": "Bitte gültige Seriennummer eingeben.",
+          "not_found": "Kein Gerät mit dieser Seriennummer gefunden. Stelle sicher, dass das Gerät eingeschaltet und in Reichweite ist."
+        }
+      }
+    }
+  }
+}
