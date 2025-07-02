@@ -1,0 +1,13 @@
+{
+  "domain": "growatt_ble",
+  "name": "Growatt BLE Sensor",
+  "version": "0.1.0",
+  "documentation": "https://github.com/timniklas/growatt_ble",
+  "requirements": [
+    "bleak==0.21.0"
+  ],
+  "dependencies": [],
+  "codeowners": [
+    "@timniklas"
+  ]
+}
