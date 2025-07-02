@@ -1,6 +1,6 @@
 {
   "domain": "growatt_ble",
-  "name": "Growatt BLE Sensor",
+  "name": "Growatt NEO Bluetooth",
   "version": "0.1.0",
   "documentation": "https://github.com/timniklas/growatt_ble",
   "requirements": [
