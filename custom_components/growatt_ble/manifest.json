@@ -5,7 +5,7 @@
   "config_flow": true,
   "documentation": "https://github.com/timniklas/growatt_ble",
   "requirements": [
-    "bleak==0.21.0"
+    "bleak"
   ],
   "dependencies": [],
   "codeowners": [
