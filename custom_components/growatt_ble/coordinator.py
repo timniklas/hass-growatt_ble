@@ -4,7 +4,8 @@ from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, Upda
 from .growatt_ble import GrowattBLE
 
 _LOGGER = logging.getLogger(__name__)
-SCAN_INTERVAL = timedelta(seconds=60)
+# Intervall auf 1 Sekunde setzen
+SCAN_INTERVAL = timedelta(seconds=1)
 
 class GrowattBLECoordinator(DataUpdateCoordinator):
     def __init__(self, hass, serial):
@@ -21,4 +22,9 @@ class GrowattBLECoordinator(DataUpdateCoordinator):
             data = await self.ble.read_all()
             return data
         except Exception as exc:
+            # Fehlerbehandlung für "nachts nicht erreichbar"
+            if "Kein passendes Gerät" in str(exc) or "Device not found" in str(exc) or "not found" in str(exc):
+                # Gerät ist nachts aus, das ist normal – gib leere Daten zurück
+                _LOGGER.debug("Growatt BLE Gerät nicht erreichbar – vermutlich Nacht. Setze alle Sensoren auf None.")
+                return {}
             raise UpdateFailed(f"Growatt BLE update failed: {exc}")
