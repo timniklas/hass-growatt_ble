@@ -30,6 +30,14 @@ class GrowattBLE:
                 self._connected = False
                 raise Exception(f"Verbindung zu {self.address} fehlgeschlagen: {exc}")
 
+    async def disconnect(self):
+        if self.client is not None and self._connected:
+            try:
+                await self.client.disconnect()
+            except Exception:
+                pass
+            self._connected = False
+
     async def read_all(self):
         try:
             await self.ensure_connected()
