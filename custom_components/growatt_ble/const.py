@@ -2,7 +2,7 @@ DOMAIN = "growatt_ble"
 
 REGISTERS = {
     "output_power": {"reg": 2,  "scale": 0.25,  "unit": "W"},
-    "pv1_voltage":  {"reg": 5,  "scale": 0.01,  "unit": "V"},
+    "pv1_voltage":  {"reg": 5,  "scale": 0.1,  "unit": "V"},
     "pv1_current":  {"reg": 6,  "scale": 0.005, "unit": "A"},
     "pv2_voltage":  {"reg": 7,  "scale": 0.1,  "unit": "V"},
     "pv2_current":  {"reg": 8,  "scale": 0.005,  "unit": "A"},
