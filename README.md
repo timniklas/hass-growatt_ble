@@ -1,71 +1,61 @@
-# Growatt BLE Home Assistant Integration
+# Growatt NEO Bluetooth Integration for Home Assistant 🏠
 
-![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)
-![license](https://img.shields.io/github/license/timniklas/growatt_ble)
-![maintenance](https://img.shields.io/maintenance/yes/2025)
+[![GitHub Release](https://img.shields.io/github/v/release/timniklas/hass-growatt_ble?sort=semver&style=for-the-badge&color=green)](https://github.com/timniklas/hass-growatt_ble/releases/)
+[![GitHub Release Date](https://img.shields.io/github/release-date/timniklas/hass-growatt_ble?style=for-the-badge&color=green)](https://github.com/timniklas/hass-growatt_ble/releases/)
+![GitHub Downloads (all assets, latest release)](https://img.shields.io/github/downloads/timniklas/hass-growatt_ble/latest/total?style=for-the-badge&label=Downloads%20latest%20Release)
+![HA Analytics](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fanalytics.home-assistant.io%2Fcustom_integrations.json&query=%24.blitzerde.total&style=for-the-badge&label=Active%20Installations&color=red)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/timniklas/hass-growatt_ble?style=for-the-badge)
+[![hacs](https://img.shields.io/badge/HACS-Integration-blue.svg?style=for-the-badge)](https://github.com/hacs/integration)
 
-Integriere deine Growatt NEO 800 (und ähnliche) Geräte per Bluetooth Low Energy direkt in Home Assistant und erhalte PV-Daten wie Leistung, Spannung, Energie, Temperatur u.v.m. Die Geräte-Seriennummer wird beim Hinzufügen der Integration abgefragt.
+## Overview
 
-## Features
-
-- Automatische Erkennung des Growatt BLE Geräts per Seriennummer (Gerätename)
-- Sensoren für:
-  - PV1 / PV2 Spannung, Strom & Leistung
-  - Output Power
-  - Tages- & Gesamtenergie
-  - Temperatur(en)
-- Konfigurierbar via Home Assistant UI (Config Flow)
-- Fehlerprüfung: Gerät muss bei Einrichtung erreichbar sein
-- Mehrere Geräte werden unterstützt
+The Growatt NEO Bluetooth Home Assistant Custom Integration allows you to integrate the ShineTools App with your Home Assistant setup.
 
 ## Installation
 
-**HACS:**  
-Dieses Repository als [benutzerdefiniertes Repository](https://hacs.xyz/docs/faq/custom_repositories/) in HACS hinzufügen und "Growatt BLE" installieren.
+### HACS (recommended)
 
-**Manuell:**  
-1. Lade das Repo herunter und kopiere den Ordner `growatt_ble` in das Verzeichnis `custom_components` deiner Home Assistant Installation.
-2. Starte Home Assistant neu.
+This integration is available in HACS (Home Assistant Community Store).
 
-> **Voraussetzungen:**  
-> - Bluetooth-Adapter auf dem Home Assistant Host  
-> - Das Growatt-Gerät muss eingeschaltet und in Bluetooth-Reichweite sein  
-> - Das Python-Paket `bleak` wird automatisch installiert
+1. Install HACS if you don't have it already
+2. Open HACS in Home Assistant
+3. Go to any of the sections (integrations, frontend, automation).
+4. Click on the 3 dots in the top right corner.
+5. Select "Custom repositories"
+6. Add following URL to the repository `https://github.com/timniklas/hass-growatt_ble`.
+7. Select Integration as category.
+8. Click the "ADD" button
+9. Search for "Growatt NEO Bluetooth"
+10. Click the "Download" button
 
-## Einrichtung
+### Manual
 
-1. Füge über die Home Assistant Oberfläche die Integration "Growatt BLE" hinzu.
-2. Gib die Seriennummer (Gerätename) deines Geräts ein.
-3. Nach erfolgreicher Erkennung werden die Sensoren automatisch erstellt.
+To install this integration manually you have to download [_blitzerde.zip_](https://github.com/timniklas/hass-growatt_ble/releases/latest/) and extract its contents to `config/custom_components/growatt_ble` directory:
 
-## Geräte-Namen (Seriennummer) finden
+```bash
+mkdir -p custom_components/growatt_ble
+cd custom_components/growatt_ble
+wget https://github.com/timniklas/hass-growatt_ble/releases/latest/download/growatt_ble.zip
+unzip growatt_ble.zip
+rm growatt_ble.zip
+```
 
-Im Normalfall steht der Gerätename auf dem Typenschild des Growatt Geräts und sieht aus wie `QMNxxxxxxx`.
+## Configuration
 
-## Bekannte Probleme
+### Using UI
 
-- Das Gerät muss für die Ersteinrichtung eingeschaltet und in Bluetooth-Reichweite sein.
-- Nur getestet mit NEO 800, andere Modelle könnten abweichende Register haben.
-- Die BLE-Kommunikation ist empfindlich gegenüber Zeitüberschreitungen.
+[![Open your Home Assistant instance and start setting up a new integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=growatt_ble)
 
-## Beispiel-Sensoren
+From the Home Assistant front page go to `Configuration` and then select `Devices & Services` from the list.
+Use the `Add Integration` button in the bottom right to add a new integration called `Growatt NEO Bluetooth`.
 
-- `sensor.growatt_ble_output_power`
-- `sensor.growatt_ble_pv1_voltage`
-- `sensor.growatt_ble_daily_energy`
-- u.v.m.
+## Help and Contribution
 
-## Roadmap & Ideen
+If you find a problem, feel free to report it and I will do my best to help you.
+If you have something to contribute, your help is greatly appreciated!
+If you want to add a new feature, add a pull request first so we can discuss the details.
 
-- Unterstützung für weitere Growatt-Modelle/Register
-- Optionale Konfiguration von Scan-Intervallen
-- Automatische Erkennung mehrerer Geräte
+## Disclaimer
 
-## Support & Feedback
-
-Fragen, Feature-Wünsche oder Fehler?  
-Erstelle ein [Issue](https://github.com/timniklas/growatt_ble/issues) oder diskutiere auf GitHub!
-
-## Lizenz
-
-[MIT License](LICENSE)
+This custom integration is not officially endorsed or supported by Growatt.
+Use it at your own risk and ensure that you comply with all relevant terms of service and privacy policies.
