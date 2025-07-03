@@ -41,13 +41,23 @@ class GrowattBLESensor(SensorEntity):
         self.key = key
         self.meta = meta
         self._attr_name = f"Growatt BLE {key.replace('_',' ').title()}"
-        self._attr_unique_id = f"growatt_ble_{key}"
+        self._attr_unique_id = f"growatt_ble_{coordinator.ble.target_name}_{key}"
         self._attr_native_unit_of_measurement = meta.get("unit", "")
         self._attr_state_class = "measurement"
 
     @property
+    def device_info(self):
+        return {
+            "identifiers": {(DOMAIN, self.coordinator.ble.target_name)},
+            "name": f"Growatt BLE ({self.coordinator.ble.target_name})",
+            "manufacturer": "Growatt",
+            "model": "NEO 800",
+            "serial_number": self.coordinator.ble.target_name,
+        }
+
+    @property
     def available(self):
-        return self.coordinator.data and self.key in self.coordinator.data
+        return self.coordinator.data is not None and self.key in self.coordinator.data
 
     @property
     def native_value(self):
