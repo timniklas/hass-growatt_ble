@@ -11,6 +11,9 @@
 
 The Growatt NEO Bluetooth Home Assistant Custom Integration allows you to integrate the ShineTools App with your Home Assistant setup.
 
+![image](https://github.com/user-attachments/assets/eb3b3971-f2ee-4953-81ef-d9df6e3aff1d)
+
+
 ## Installation
 
 ### HACS (recommended)
