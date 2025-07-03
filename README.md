@@ -33,7 +33,7 @@ This integration is available in HACS (Home Assistant Community Store).
 
 ### Manual
 
-To install this integration manually you have to download [_blitzerde.zip_](https://github.com/timniklas/hass-growatt_ble/releases/latest/) and extract its contents to `config/custom_components/growatt_ble` directory:
+To install this integration manually you have to download [_growatt_ble.zip_](https://github.com/timniklas/hass-growatt_ble/releases/latest/) and extract its contents to `config/custom_components/growatt_ble` directory:
 
 ```bash
 mkdir -p custom_components/growatt_ble
